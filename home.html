@@ -20,84 +20,151 @@
     <!-- tailwind custom css -->
     <link rel="stylesheet" href="./css/tailwind.config.css" />
   </head>
-  <body class="bg-[#f4f5f7] h-[100vh]">
-    <div
-      class="flex justify-between items-center p-3 max-w-lg mx-auto min-h-[100px] border-b-2 border-gray-400"
-    >
-      <div class="flex gap-5 items-center">
-        <img class="h-[50px]" src="./images/Group.png" alt="" />
+  <body class="bg-[#f4f5f7] min-h-[100vh]">
+    <div class="bg-white max-w-lg mx-auto rounded-b-xl mb-14">
+      <div
+        class="p-3 flex justify-between items-center min-h-[100px] border-b-2 border-gray-400"
+      >
+        <div class="flex gap-5 items-center">
+          <img class="h-[50px]" src="./images/Group.png" alt="" />
+          <div>
+            <h2 class="font-bold">$<span id="main-amount">45000</span></h2>
+            <p>Available Balance</p>
+          </div>
+        </div>
         <div>
-          <h2 class="font-bold">$<span>45000</span></h2>
-          <p>Available Balance</p>
+          <button class="btn text-[#08080880]">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"
+            ></i>
+            Log Out
+          </button>
         </div>
       </div>
-      <div>
-        <button class="btn text-[#08080880]">
-          <i
-            class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"
-          ></i>
-          Log Out
-        </button>
+      <div class="mt-7 p-3">
+        <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#08080880] py-3">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-3 p-3 min-h-[200px]">
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img class="mx-auto h-6 w-6" src="./images/wallet1.png" alt="" />
+            <p class="text-[14px] text-[#080808b3]">Add Money</p>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img class="mx-auto h-6 w-6" src="./images/send1.png" alt="" />
+            <p class="text-[14px] text-[#080808b3]">Cashout</p>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img class="mx-auto h-6 w-6" src="./images/money1.png" alt="" />
+            <p class="text-[14px] text-[#080808b3]">Transfer Money</p>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img class="mx-auto h-6 w-6" src="./images/bonus1.png" alt="" />
+            <p class="text-[14px] text-[#080808b3]">Get Bonus</p>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img class="mx-auto h-6 w-6" src="./images/purse1.png" alt="" />
+            <p class="text-[14px] text-[#080808b3]">Pay Bill</p>
+          </div>
+        </div>
+        <div
+          class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
+        >
+          <div>
+            <img
+              class="mx-auto h-6 w-6"
+              src="./images/transaction1.png"
+              alt=""
+            />
+            <p class="text-[14px] text-[#080808b3]">Transactions</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="max-w-lg mx-auto mt-7 p-3">
-      <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
-      <p class="text-[#08080880] py-3">
-        Enjoy easy and convenient financial services with us. Cashout charge is
-        low and
-      </p>
+    <!-- all form section -->
+    <div class="all-form-sections pb-20 max-w-lg mx-auto">
+      <!-- add money -->
+      <div class="">
+        <h1 class="text-[18px] font-bold mb-5 ml-3">Add Money</h1>
+        <form action="" class="p-8 bg-white rounded-2xl">
+          <div>
+            <label for="select-bank" class="font-semibold">Select a bank</label>
+            <select
+              id="select-bank"
+              class="select w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            >
+              <option disabled>Select a Bank</option>
+              <option value="Brac Bank">Brac Bank</option>
+              <option value="EBL Bank">EBL Bank</option>
+              <option value="IFIC Bank">IFIC Bank</option>
+            </select>
+          </div>
+          <div class="mt-5">
+            <label for="bank-ac-num" class="font-semibold"
+              >Enter Bank Account Number</label
+            >
+            <br />
+            <input
+              type="text"
+              id="bank-ac-num"
+              placeholder="Enter 11 digit Bank Account Number"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <div class="mt-5">
+            <label for="amount-to-add" class="font-semibold"
+              >Amount to Add</label
+            >
+            <br />
+            <input
+              type="text"
+              id="amount-to-add"
+              required
+              placeholder="Add Amount to Withdraw"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <div class="mt-5">
+            <label for="pin-number" class="font-semibold">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              id="pin-number"
+              placeholder="Enter 4 Digit Pin Number"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <button
+            id="addMoneyBtn"
+            class="btn bg-[#0874f2] text-white mt-3 w-full rounded-3xl"
+          >
+            Add Money
+          </button>
+        </form>
+      </div>
     </div>
-    <div
-      class="max-w-lg mx-auto p-3 grid grid-cols-3 grid-rows-2 gap-3 border-2 border-red-500 min-h-[200px]"
-    >
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/wallet1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Add Money</p>
-        </div>
-      </div>
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/send1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Cashout</p>
-        </div>
-      </div>
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/money1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Transfer Money</p>
-        </div>
-      </div>
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/bonus1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Get Bonus</p>
-        </div>
-      </div>
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/purse1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Pay Bill</p>
-        </div>
-      </div>
-      <div
-        class="flex justify-center items-center h-[90px] border-2 border-[#0808081a] rounded-lg"
-      >
-        <div>
-          <img class="mx-auto h-6 w-6" src="./images/transaction1.png" alt="" />
-          <p class="text-[14px] text-[#080808b3]">Transactions</p>
-        </div>
-      </div>
-    </div>
+    <script src="./home.js"></script>
   </body>
 </html>
