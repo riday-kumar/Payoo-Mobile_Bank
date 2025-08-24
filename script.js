@@ -4,7 +4,7 @@ document.getElementById("loginBtn").addEventListener("click", function (e) {
   e.preventDefault();
 
   const mobileNum = 10987654321;
-  const pinNum = 4321;
+  const pinNum = 1234;
 
   //   we got the value from the user
   const mobileNumberValue = document.getElementById("mobile-number").value;
