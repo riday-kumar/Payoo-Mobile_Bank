@@ -274,6 +274,91 @@
           </button>
         </form>
       </div>
+      <!-- Get Bonus -->
+      <div id="getBounsSec" class="form hidden">
+        <h1 class="text-[18px] font-bold mb-5 ml-3">Get Bonus</h1>
+        <form action="" class="p-8 bg-white rounded-2xl">
+          <div></div>
+          <div class="mt-5">
+            <label for="bonus-coupon-num" class="font-semibold"
+              >Enter Bonus Coupon</label
+            >
+            <br />
+            <input
+              type="text"
+              id="bonus-coupon-num"
+              placeholder="Enter Your Coupon"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+
+          <button
+            id="getBonusBtn"
+            class="btn bg-[#0874f2] text-white mt-3 w-full rounded-3xl"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+      <!-- Pay Bill -->
+      <div id="payBillSec" class="form hidden">
+        <h1 class="text-[18px] font-bold mb-5 ml-3">Pay Bill</h1>
+        <form action="" class="p-8 bg-white rounded-2xl">
+          <div>
+            <label for="select-pay" class="font-semibold">Select To Pay</label>
+            <select
+              id="select-pay"
+              class="select w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            >
+              <option disabled>Select Bill Type</option>
+              <option value="Electricity Bill">Electricity Bill</option>
+              <option value="Gass Bill">Gass Bill</option>
+              <option value="Water Bill">Water Bill</option>
+            </select>
+          </div>
+          <div class="mt-5">
+            <label for="biller-ac-num" class="font-semibold"
+              >Biller Account Number</label
+            >
+            <br />
+            <input
+              type="text"
+              id="biller-ac-num"
+              placeholder="Enter Account Number"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <div class="mt-5">
+            <label for="amount-to-pay" class="font-semibold"
+              >Amount to Pay</label
+            >
+            <br />
+            <input
+              type="text"
+              id="amount-to-pay"
+              required
+              placeholder="Amount to Pay"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <div class="mt-5">
+            <label for="pin-number" class="font-semibold">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              id="pin-number-pay-bill"
+              placeholder="Enter 4 Digit Pin Number"
+              class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
+            />
+          </div>
+          <button
+            id="payNowBtn"
+            class="btn bg-[#0874f2] text-white mt-3 w-full rounded-3xl"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
       <!-- Transactions -->
       <div id="transactionsSec" class="form hidden">
         <div class="flex justify-between items-center">

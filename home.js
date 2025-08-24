@@ -69,13 +69,10 @@ function makingHistory(work) {
 }
 
 // Toggle Feature in various button
-const addMoneyFormSec = document.getElementById("addMoneySec");
-const addCashOutFormSec = document.getElementById("cashOutSec");
-const addTranferMoneyFormSec = document.getElementById("transferMoneySec");
-const addTransactionsSec = document.getElementById("transactionsSec");
 
 // Add Money Button (Background)
 document.getElementById("add-money-btn").addEventListener("click", function () {
+  const addMoneyFormSec = getElement("addMoneySec");
   handleToggle(addMoneyFormSec);
   handleBackgroundColor("add-money-btn");
 });
@@ -88,6 +85,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
 
   //   get input from user
   const selectedBank = getInputValue("select-bank");
+
   const bankAcNum = getInputValue("bank-ac-num");
   const amountToAdd = getInputValueNumber("amount-to-add");
   const pinNumber = getInputValueNumber("pin-number");
@@ -118,6 +116,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
 
 // Cash Out Button (Background)
 document.getElementById("cah-out-btn").addEventListener("click", function () {
+  const addCashOutFormSec = getElement("cashOutSec");
   handleToggle(addCashOutFormSec);
   handleBackgroundColor("cah-out-btn");
 });
@@ -152,6 +151,7 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
 document
   .getElementById("transfer-money-btn")
   .addEventListener("click", function () {
+    const addTranferMoneyFormSec = getElement("transferMoneySec");
     handleToggle(addTranferMoneyFormSec);
     handleBackgroundColor("transfer-money-btn");
   });
@@ -160,6 +160,7 @@ document
 document
   .getElementById("transaction-money-btn")
   .addEventListener("click", function (e) {
+    const addTransactionsSec = getElement("transactionsSec");
     handleToggle(addTransactionsSec);
     handleBackgroundColor("transaction-money-btn");
 
@@ -194,3 +195,72 @@ document
       showHistory.appendChild(newDiv);
     }
   });
+
+// PayBill Button (Background)
+document.getElementById("pay-bill-btn").addEventListener("click", function () {
+  const addPayBillFormSec = getElement("payBillSec");
+  handleToggle(addPayBillFormSec);
+  handleBackgroundColor("pay-bill-btn");
+});
+
+// Pay Bill feature
+document.getElementById("payNowBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const avaliAbleBalance = getInnerText("main-amount");
+
+  const typeOfBill = getInputValue("select-pay");
+  console.log(typeOfBill);
+  const billerAcNumber = getInputValueNumber("biller-ac-num");
+  const payAmount = getInputValueNumber("amount-to-pay");
+  const pinNumberPayBill = getInputValueNumber("pin-number-pay-bill");
+
+  if (payAmount <= 0 || payAmount > avaliAbleBalance) {
+    alert("Invalid Amount");
+    return;
+  }
+
+  if (pinNumberPayBill !== validPin) {
+    alert("Pin Number is not Correct");
+    return;
+  }
+
+  const totalNewAvailableBalance = avaliAbleBalance - payAmount;
+  setInnerText(totalNewAvailableBalance);
+
+  makingHistory(typeOfBill);
+});
+
+// Get Bonus Button (Background)
+document.getElementById("get-bonus-btn").addEventListener("click", function () {
+  const getBounsSec = getElement("getBounsSec");
+  handleToggle(getBounsSec);
+  handleBackgroundColor("get-bonus-btn");
+});
+
+// Get Bonus feature
+let couponApplyNum = 1;
+document.getElementById("getBonusBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const avaliAbleBalance = getInnerText("main-amount");
+
+  const copun = getInputValueNumber("bonus-coupon-num");
+
+  if (couponApplyNum >= 2) {
+    alert("Copun Already Applied");
+    return;
+  }
+
+  if (copun !== 1234) {
+    alert("Copun is not Matched");
+    return;
+  }
+
+  const totalNewAvailableBalance = avaliAbleBalance + 2000;
+  setInnerText(totalNewAvailableBalance);
+  couponApplyNum++;
+  console.log(couponApplyNum);
+
+  makingHistory("Bonus Added");
+});
