@@ -58,7 +58,7 @@ function handleBackgroundColor(id) {
     .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
 }
 
-// making history
+// making history function
 function makingHistory(work) {
   const data = {
     name: work,
@@ -68,7 +68,15 @@ function makingHistory(work) {
   // console.log(transactionData);
 }
 
-// Toggle Feature in various button
+// validation of Account number function
+function accountCheck(id) {
+  const accountNum = getInputValue(id);
+  console.log(accountNum);
+  if (accountNum.length != 11) {
+    alert("Bank Account Number Should Be 11 digit");
+    return;
+  }
+}
 
 // Add Money Button (Background)
 document.getElementById("add-money-btn").addEventListener("click", function () {
@@ -91,11 +99,13 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   const pinNumber = getInputValueNumber("pin-number");
 
   //   Validation
-  if (bankAcNum.length != 11) {
-    // console.log(bankAcNum.length + "," + pinNumber.length);
-    alert("Bank Account Number Should Be 11 digit");
-    return;
-  }
+  // if (bankAcNum.length != 11) {
+  //   // console.log(bankAcNum.length + "," + pinNumber.length);
+  //   alert("Bank Account Number Should Be 11 digit");
+  //   return;
+  // }
+
+  accountCheck("bank-ac-num");
 
   if (amountToAdd <= 0) {
     alert("Invelid Amount");
@@ -155,6 +165,33 @@ document
     handleToggle(addTranferMoneyFormSec);
     handleBackgroundColor("transfer-money-btn");
   });
+
+// Transfer Money Feature
+document.getElementById("sendMoneyBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const avaliAbleBalance = getInnerText("main-amount");
+
+  const getUserAcNumber = getInputValueNumber("user-ac-num");
+  const amountToTransfer = getInputValueNumber("amount-to-transfer");
+  const pinNumberUser = getInputValueNumber("pin-number-for-user");
+  console.log(pinNumberUser);
+
+  if (amountToTransfer <= 0 || amountToTransfer > avaliAbleBalance) {
+    alert("Invalid Amount");
+    return;
+  }
+
+  if (pinNumberUser !== validPin) {
+    alert("Pin Number is not Correct");
+    return;
+  }
+
+  const totalNewAvailableBalance = avaliAbleBalance - amountToTransfer;
+  setInnerText(totalNewAvailableBalance);
+
+  makingHistory("Transfer Money");
+});
 
 // Transaction History Feature
 document
@@ -263,4 +300,11 @@ document.getElementById("getBonusBtn").addEventListener("click", function (e) {
   console.log(couponApplyNum);
 
   makingHistory("Bonus Added");
+});
+
+// Log Out
+
+getElement("logOut").addEventListener("click", function () {
+  alert("Do You Want To Log Out?");
+  window.location.href = "index.html";
 });

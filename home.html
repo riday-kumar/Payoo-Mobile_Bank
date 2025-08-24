@@ -33,7 +33,7 @@
           </div>
         </div>
         <div>
-          <button class="btn text-[#08080880]">
+          <button id="logOut" class="btn text-[#08080880]">
             <i
               class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700"
             ></i>
@@ -217,60 +217,50 @@
       </div>
       <!-- Transfer Money -->
       <div id="transferMoneySec" class="form hidden">
-        <h1 class="text-[18px] font-bold mb-5 ml-3">Transfer Out</h1>
+        <h1 class="text-[18px] font-bold mb-5 ml-3">Transfer Money</h1>
         <form action="" class="p-8 bg-white rounded-2xl">
-          <div>
-            <label for="select-bank" class="font-semibold">Select a bank</label>
-            <select
-              id="select-bank"
-              class="select w-full bg-[#f4f5f7] mt-3 rounded-3xl"
-            >
-              <option disabled>Select a Bank</option>
-              <option value="Brac Bank">Brac Bank</option>
-              <option value="EBL Bank">EBL Bank</option>
-              <option value="IFIC Bank">IFIC Bank</option>
-            </select>
-          </div>
           <div class="mt-5">
-            <label for="bank-ac-num" class="font-semibold"
-              >Enter Bank Account Number</label
+            <label for="user-ac-num" class="font-semibold"
+              >User Account Number</label
             >
             <br />
             <input
               type="text"
-              id="bank-ac-num"
-              placeholder="Enter 11 digit Bank Account Number"
+              id="user-ac-num"
+              placeholder="Enter 11 digit User Account Number"
               class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
             />
           </div>
           <div class="mt-5">
-            <label for="amount-to-add" class="font-semibold"
-              >Amount to Add</label
+            <label for="amount-to-transfer" class="font-semibold"
+              >Amount to Transfer</label
             >
             <br />
             <input
               type="text"
-              id="amount-to-add"
+              id="amount-to-transfer"
               required
-              placeholder="Add Amount to Withdraw"
+              placeholder="Enter Amount to Transfer"
               class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
             />
           </div>
           <div class="mt-5">
-            <label for="pin-number" class="font-semibold">Pin Number</label>
+            <label for="pin-number-for-user" class="font-semibold"
+              >Pin Number</label
+            >
             <br />
             <input
               type="text"
-              id="pin-number"
+              id="pin-number-for-user"
               placeholder="Enter 4 Digit Pin Number"
               class="input w-full bg-[#f4f5f7] mt-3 rounded-3xl"
             />
           </div>
           <button
-            id="addMoneyBtn"
+            id="sendMoneyBtn"
             class="btn bg-[#0874f2] text-white mt-3 w-full rounded-3xl"
           >
-            Add Money
+            Send Money
           </button>
         </form>
       </div>
